@@ -1,4 +1,5 @@
 #!/bin/sh
+set -x
 
 echo "=== Creating configs ==="
 mkdir -p /asf/config
@@ -35,6 +36,9 @@ EOF
 
 echo "=== Config files ==="
 ls -la /asf/config/
+
+echo "=== Content of first.json ==="
+cat /asf/config/first.json
 
 echo "=== Starting ASF ==="
 exec /asf/ArchiSteamFarm --no-restart
