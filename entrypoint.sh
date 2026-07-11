@@ -1,5 +1,18 @@
 #!/bin/sh
 
+echo "=== Working directory ==="
+pwd
+
+echo "=== Contents of / ==="
+ls -la /
+
+echo "=== Contents of /app ==="
+ls -la /app/
+
+echo "=== Find ArchiSteamFarm ==="
+find / -name "*ArchiSteamFarm*" 2>/dev/null
+
+echo "=== Creating configs ==="
 cat > /app/config/ASF.json <<EOF
 {
   "CurrentCulture": "ru-RU",
@@ -17,4 +30,5 @@ cat > /app/config/first.json <<EOF
 }
 EOF
 
+echo "=== Starting ASF ==="
 exec /app/ArchiSteamFarm --no-restart
