@@ -1,11 +1,12 @@
 FROM justarchi/archisteamfarm:latest
 
-COPY config /app/config
-COPY entrypoint.sh /app/entrypoint.sh
+# Копируем конфиги в правильную папку
+COPY config /asf/config
+COPY entrypoint.sh /asf/entrypoint.sh
 
-RUN sed -i 's/\r$//' /app/entrypoint.sh && \
-    chmod +x /app/entrypoint.sh
+RUN sed -i 's/\r$//' /asf/entrypoint.sh && \
+    chmod +x /asf/entrypoint.sh
 
 EXPOSE 1242
 
-ENTRYPOINT ["/app/entrypoint.sh"]
+ENTRYPOINT ["/asf/entrypoint.sh"]
