@@ -1,6 +1,5 @@
 #!/bin/sh
 
-# Создаём конфиги с паролями из переменных окружения
 cat > /app/config/ASF.json <<EOF
 {
   "CurrentCulture": "ru-RU",
@@ -18,5 +17,4 @@ cat > /app/config/first.json <<EOF
 }
 EOF
 
-# Запускаем ASF
 exec ./ArchiSteamFarm --no-restart
