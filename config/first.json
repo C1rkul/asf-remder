@@ -1,3 +1,7 @@
 {
-  "Enabled": true
+  "Enabled": true,
+  "GamesPlayedWhileIdle": [4162040],
+  "MachineName": "MaxwellTheCat",
+  "SteamLogin": "${ASF_STEAM_LOGIN}",
+  "SteamPassword": "${ASF_STEAM_PASSWORD}"
 }
