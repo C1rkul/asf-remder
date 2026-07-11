@@ -14,14 +14,27 @@ EOF
 cat > /asf/config/first.json <<EOF
 {
   "Enabled": true,
+  "GamesPlayedWhileIdle": [4162040],
+  "MachineName": "MaxwellTheCat",
   "SteamLogin": "${ASF_STEAM_LOGIN}",
-  "SteamPassword": "${ASF_STEAM_PASSWORD}",
-  "GamesPlayedWhileIdle": [4162040]
+  "SteamPassword": "${ASF_STEAM_PASSWORD}"
 }
 EOF
 
-# Копируем IPC.config если нужен
-# cp /app/config/IPC.config /asf/config/IPC.config 2>/dev/null || true
+cat > /asf/config/IPC.config <<EOF
+{
+  "Kestrel": {
+    "Endpoints": {
+      "HTTP": {
+        "Url": "http://0.0.0.0:1242"
+      }
+    }
+  }
+}
+EOF
+
+echo "=== Config files ==="
+ls -la /asf/config/
 
 echo "=== Starting ASF ==="
 exec /asf/ArchiSteamFarm --no-restart
