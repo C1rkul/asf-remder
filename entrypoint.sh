@@ -2,9 +2,9 @@
 set -x
 
 echo "=== Creating configs ==="
-mkdir -p /asf/config
+mkdir -p /app/config
 
-cat > /asf/config/ASF.json <<EOF
+cat > /app/config/ASF.json <<EOF
 {
   "CurrentCulture": "ru-RU",
   "IPCPassword": "${ASF_IPC_PASSWORD}",
@@ -12,7 +12,7 @@ cat > /asf/config/ASF.json <<EOF
 }
 EOF
 
-cat > /asf/config/first.json <<EOF
+cat > /app/config/first.json <<EOF
 {
   "Enabled": true,
   "GamesPlayedWhileIdle": [4162040],
@@ -22,7 +22,7 @@ cat > /asf/config/first.json <<EOF
 }
 EOF
 
-cat > /asf/config/IPC.config <<EOF
+cat > /app/config/IPC.config <<EOF
 {
   "Kestrel": {
     "Endpoints": {
@@ -35,10 +35,7 @@ cat > /asf/config/IPC.config <<EOF
 EOF
 
 echo "=== Config files ==="
-ls -la /asf/config/
-
-echo "=== Content of first.json ==="
-cat /asf/config/first.json
+ls -la /app/config/
 
 echo "=== Starting ASF ==="
 exec /asf/ArchiSteamFarm --no-restart
