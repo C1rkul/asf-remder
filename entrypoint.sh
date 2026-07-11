@@ -17,4 +17,4 @@ cat > /app/config/first.json <<EOF
 }
 EOF
 
-exec ./ArchiSteamFarm --no-restart
+exec /app/ArchiSteamFarm --no-restart
